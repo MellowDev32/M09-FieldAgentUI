@@ -2,24 +2,23 @@
 
 ## Tasks
 
-* [ ] create github repo
-* [ ] Update the readme
-* [ ] Add the instruction team as collaborators
-* [ ] Review the requirements
-* [ ] 
+* [x] create github repo
+* [x] Update the readme
+* [x] Add the instruction team as collaborators
+* [x] Review the requirements
 
 ### Part1: Project Setup and Agents List
-* [ ] Create a new react project
+* [x] Create a new react project
     * remove the cruft - refer back to components and jsx exercise
     
-* [ ] Migrate CSS files from last weeks assessment
+* [x] Migrate CSS files from last weeks assessment
     * copy them into public folder
     * Link to them in the index.html file
     
-* [ ] Add in provided `data.js` file
+* [x] Add in provided `data.js` file
   
 * [ ] Create FieldAgents component - stub
-  *Update App component to render FieldAgents
+  * Update App component to render FieldAgents
   
 * [ ] Update FieldAgents to render list of field agents
     * copy html from previous assessment
@@ -29,7 +28,7 @@
 
 ### Part 2: Add and Delete Agent
 
-* [ ] Create a forma to add an Agent
+* [ ] Create a form to add an Agent
     * add form JSX
     * decide between using individual state variables for input elements or a single object
     * Add onchange event handlers - one per input element

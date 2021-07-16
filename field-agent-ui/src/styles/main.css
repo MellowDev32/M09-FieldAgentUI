@@ -1,0 +1,166 @@
+main {
+    padding-bottom: 100px;
+}
+
+
+/* card styles */
+
+.cards {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards>div {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+
+/* form styles */
+
+.field {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.field>label {
+    margin-right: 10px;
+}
+
+.field>input {
+    border: solid 1px black;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    flex: 1 0 auto;
+}
+
+input:focus,
+textarea:focus {
+    background: black;
+    border-radius: 5px;
+}
+
+form button {
+    margin: 1rem 0.5rem;
+}
+
+
+/* button formatting */
+
+button {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    background-color: #999;
+    padding: 0.5em 2rem;
+    border: none;
+    font-family: 'Special Elite', cursive;
+}
+
+button:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.add-agent-btn {
+    float: left;
+    margin-left: 20px;
+}
+
+.delete-agent-btn {
+    float: left;
+    margin-left: 20px;
+    margin-top: 14px;
+}
+
+.update-agent-btn {
+    float: left;
+    margin-left: 20px;
+}
+
+.cancel-btn {
+    float: right;
+    margin: 14px 20px 0px 0px;
+    background-color: #CF1717;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.5em 2rem;
+    border: none;
+    text-decoration: none;
+    color: white !important;
+}
+
+.cancel-btn:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.add-btn {
+    float: right;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    background-color: #999;
+    padding: 0.5em 2rem;
+    border: none;
+    margin: 20px 20px 0 0;
+    text-decoration: none;
+}
+
+.add-btn:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.icon {
+    background-color: green;
+    width: 2em;
+}
+
+
+/* .icon-small {
+  width: 50px;
+} */
+
+/*.icon-plus::before {*/
+/*    content: "" url(../images/plus-circle-solid.svg);*/
+/*}*/
+
+
+/* page class formating */
+
+.agents {
+    overflow: hidden;
+}
+
+.agents button {
+    float: right;
+    margin: 20px 1rem 0 0;
+}
+
+.float-headline {
+    float: left;
+    margin: 30px 0 0 20px;
+}
+
+.center-headline {
+    float: none;
+    text-align: center;
+}
+
+.delete-agent {
+    text-align: center;
+    list-style-type: none;
+}
+
+.home-welcome {
+    font-size: 2rem;
+}
