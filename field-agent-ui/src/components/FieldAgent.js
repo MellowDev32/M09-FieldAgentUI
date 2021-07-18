@@ -20,23 +20,19 @@ function FieldAgents(){
     }
 
     const lastNameOnChangeHandler = (event) => {
-        console.log(event);
         setLastName(event.target.value);
     }
 
     const dobNameOnChangeHandler = (event) => {
-        console.log(event);
         setDob(event.target.value);
     }
 
     const heightOnChangeHandler = (event) => {
-        console.log(event);
         setHeightInInches(event.target.value);
     }
 
     const addAgentFormSubmitHandler = (event) => {
         event.preventDefault();
-        console.log(event);
 
         const nextId = agents.length > 0 ? Math.max(...agents.map(a => a.agentId)) + 1 : 1;
 
@@ -56,6 +52,10 @@ function FieldAgents(){
         setLastName('');
         setDob('');
         setHeightInInches('');
+    }
+
+    const AgentDeleteClickHandler = (AgentId) => {
+        setAgents(agents.filter(agent => agent.agentId !== AgentId));
     }
 
     return (
@@ -125,9 +125,8 @@ function FieldAgents(){
                           <li><span>Height in Inches:</span> {agent.heightInInches}</li>
                       </ul>
                       <div>
-                          <a href="#"> Edit </a>
-                          &nbsp;
-                          <a href="#"> Delete </a>
+                          <button >Edit</button>
+                          <button onClick={() => AgentDeleteClickHandler(agent.agentId)}>Delete</button>
                       </div>
                   </div>
               </div>
