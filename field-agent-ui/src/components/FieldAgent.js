@@ -55,6 +55,8 @@ function FieldAgents(){
         setLastName('');
         setDob('');
         setHeightInInches('');
+
+        setCurrentView('List');
     }
 
     const editAgentFormSubmitHandler = (event) => {
@@ -82,6 +84,8 @@ function FieldAgents(){
         setLastName('');
         setDob('');
         setHeightInInches('');
+
+        setCurrentView('List');
     }
 
     const AgentEditClickHandler = (AgentId) => {
@@ -103,6 +107,7 @@ function FieldAgents(){
 
     const AgentDeleteClickHandler = (AgentId) => {
         setAgents(agents.filter(agent => agent.agentId !== AgentId));
+        setCurrentView('List');
     }
 
     const addAgentClickHandler = () => {
