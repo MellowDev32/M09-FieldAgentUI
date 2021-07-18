@@ -8,6 +8,9 @@ function FieldAgents(){
     const [lastName, setLastName] = useState('');
     const [dob, setDob] = useState('');
     const [heightInInches, setHeightInInches] = useState('');
+    const [editAgentId, setEditAgentId] = useState(-1);
+    const [deleteAgent, setDeleteAgent] = useState(-1);
+    const [currentView, setCurrentView] = useState('List'); // List, Add, Edit, Delete
 
     const firstNameOnChangeHandler = (event) => {
         console.log(event);
@@ -54,8 +57,65 @@ function FieldAgents(){
         setHeightInInches('');
     }
 
+    const editAgentFormSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const newAgent = {
+            agentId: editAgentId,
+            firstName,
+            middleName,
+            lastName,
+            dob,
+            heightInInches
+        };
+
+        const newAgents = [...agents];
+
+        const newAgentIndex = newAgents.findIndex(agent => agent.agentId === editAgentId);
+
+        newAgents[newAgentIndex] = newAgent;
+
+        setAgents(newAgents);
+
+        setFirstName('');
+        setMiddleName('');
+        setLastName('');
+        setDob('');
+        setHeightInInches('');
+    }
+
+    const AgentEditClickHandler = (AgentId) => {
+        setEditAgentId(AgentId);
+
+        // Retrieve Agent to edit
+        const editAgent = agents.find(agent => agent.agentId === AgentId);
+
+        // Update fields
+        setFirstName(editAgent.firstName);
+        setMiddleName(editAgent.middleName);
+        setLastName(editAgent.lastName);
+        setDob(editAgent.dob);
+        setHeightInInches(editAgent.heightInInches)
+
+        // Show edit form
+        setCurrentView('Edit');
+    }
+
     const AgentDeleteClickHandler = (AgentId) => {
         setAgents(agents.filter(agent => agent.agentId !== AgentId));
+    }
+
+    const addAgentClickHandler = () => {
+        setCurrentView('Add');
+    }
+
+    const cancelClickHandler = () => {
+        setCurrentView('List');
+    }
+
+    const deleteClickHandler = (AgentId) => {
+        setDeleteAgent(agents.find(agent => agent.agentId === AgentId));
+        setCurrentView('Delete')
     }
 
     return (
@@ -82,58 +142,121 @@ function FieldAgents(){
               <li><a href="#">Missions</a></li>
           </nav>
 
-          <h2>Agents</h2>
-
-          <h3>Add Agent</h3>
-          <form onSubmit={addAgentFormSubmitHandler}>
-                <div>
-                    <label htmlFor="firstName">First Name: </label>
-                    <input type="text" id="firstName" name="firstName" value={firstName} onChange={firstNameOnChangeHandler} />
-                </div>
-                <div>
-                  <label htmlFor="middleName">Middle Name: </label>
-                  <input type="text" id="middleName" name="middleName" value={middleName} onChange={middleNameOnChangeHandler} />
-                </div>
-
-                <div>
-                  <label htmlFor="lastName">Last Name: </label>
-                  <input type="text" id="lastName" name="lastName" value={lastName} onChange={lastNameOnChangeHandler} />
-                </div>
-
-                <div>
-                  <label htmlFor="dob">Date of Birth: </label>
-                  <input type="text" id="dob" name="dob" value={dob} onChange={dobNameOnChangeHandler} />
-                </div>
-
-                <div>
-                    <label htmlFor="heightInInches">Height in Inches: </label>
-                    <input type="text" id="heightInInches" name="heightInInches" value={heightInInches} onChange={heightOnChangeHandler} />
-                </div>
-
-                <div>
-                    <button type="submit">Add Agent</button>
-                </div>
-          </form>
-
-          {agents.map(agent => (
-
-              <div className="cards">
-                  <div>
-                      <h3>{agent.firstName} {agent.middleName} {agent.lastName}</h3>
-                      <ul>
-                          <li><span>DOB:</span> {agent.dob}</li>
-                          <li><span>Height in Inches:</span> {agent.heightInInches}</li>
-                      </ul>
+          {currentView === 'Add' ? (
+              <div>
+                  <h3>Add Agent</h3>
+                  <form onSubmit={addAgentFormSubmitHandler}>
                       <div>
-                          <button >Edit</button>
-                          <button onClick={() => AgentDeleteClickHandler(agent.agentId)}>Delete</button>
+                          <label htmlFor="firstName">First Name: </label>
+                          <input type="text" id="firstName" name="firstName" value={firstName} onChange={firstNameOnChangeHandler} />
+                      </div>
+                      <div>
+                          <label htmlFor="middleName">Middle Name: </label>
+                          <input type="text" id="middleName" name="middleName" value={middleName} onChange={middleNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="lastName">Last Name: </label>
+                          <input type="text" id="lastName" name="lastName" value={lastName} onChange={lastNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="dob">Date of Birth: </label>
+                          <input type="text" id="dob" name="dob" value={dob} onChange={dobNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="heightInInches">Height in Inches: </label>
+                          <input type="text" id="heightInInches" name="heightInInches" value={heightInInches} onChange={heightOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <button type="submit">Add Agent</button>
+                          <button type="button" onClick={cancelClickHandler}>Cancel</button>
+                      </div>
+                  </form>
+              </div>
+          ) : null}
+
+          { currentView === 'Edit' ? (
+              <div>
+                  <h3>Edit Agent</h3>
+                  <form onSubmit={editAgentFormSubmitHandler}>
+                      <div>
+                          <label htmlFor="firstName">First Name: </label>
+                          <input type="text" id="firstName" name="firstName" value={firstName} onChange={firstNameOnChangeHandler} />
+                      </div>
+                      <div>
+                          <label htmlFor="middleName">Middle Name: </label>
+                          <input type="text" id="middleName" name="middleName" value={middleName} onChange={middleNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="lastName">Last Name: </label>
+                          <input type="text" id="lastName" name="lastName" value={lastName} onChange={lastNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="dob">Date of Birth: </label>
+                          <input type="text" id="dob" name="dob" value={dob} onChange={dobNameOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <label htmlFor="heightInInches">Height in Inches: </label>
+                          <input type="text" id="heightInInches" name="heightInInches" value={heightInInches} onChange={heightOnChangeHandler} />
+                      </div>
+
+                      <div>
+                          <button type="submit">Update Agent</button>
+                          <button type="button" onClick={cancelClickHandler}>Cancel</button>
+                      </div>
+                  </form>
+              </div>
+          ) : null}
+
+          {currentView === 'List' ? (
+              <div>
+                  <h2>Agents</h2>
+                  <button onClick={addAgentClickHandler}>Add Agent</button>
+                  {agents.map(agent => (
+
+                      <div className="cards">
+                          <div>
+                              <h3>{agent.firstName} {agent.middleName} {agent.lastName}</h3>
+                              <ul>
+                                  <li><span>DOB:</span> {agent.dob}</li>
+                                  <li><span>Height in Inches:</span> {agent.heightInInches}</li>
+                              </ul>
+                              <div>
+                                  <button onClick={() => AgentEditClickHandler(agent.agentId)}>Edit</button>
+                                  <button onClick={() => deleteClickHandler(agent.agentId)}>Delete</button>
+                              </div>
+                          </div>
+                      </div>
+                  ))}
+              </div>
+          ) : null}
+
+          { currentView === 'Delete' ? (
+              <div>
+                  <h2>Delete Agent</h2>
+                  <div className="cards">
+                      <div>
+                          <h3>{deleteAgent.firstName} {deleteAgent.middleName} {deleteAgent.lastName}</h3>
+                          <ul>
+                              <li><span>DOB:</span> {deleteAgent.dob}</li>
+                              <li><span>Height in Inches:</span> {deleteAgent.heightInInches}</li>
+                          </ul>
                       </div>
                   </div>
+                  <p>Are you sure you want to delete this agent?</p>
+                  <button onClick={() => AgentDeleteClickHandler(deleteAgent.agentId)}>Delete</button>
+                  <button type="button" onClick={cancelClickHandler}>Cancel</button>
               </div>
-          ))}
+          ) : null }
 
       </div>
     );
-}
+};
 
 export default FieldAgents;
