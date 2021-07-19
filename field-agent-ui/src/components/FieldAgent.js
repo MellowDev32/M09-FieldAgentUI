@@ -147,35 +147,37 @@ function FieldAgents(){
               <li><a href="#">Missions</a></li>
           </nav>
 
+          <main className="agents">
           {currentView === 'Add' ? (
               <div>
-                  <h3>Add Agent</h3>
+                  <h3 className="center-headline">Add Agent</h3>
                   <form onSubmit={addAgentFormSubmitHandler}>
-                      <div>
+                      <div className="field">
                           <label htmlFor="firstName">First Name: </label>
                           <input type="text" id="firstName" name="firstName" value={firstName} onChange={firstNameOnChangeHandler} />
                       </div>
-                      <div>
+
+                      <div className="field">
                           <label htmlFor="middleName">Middle Name: </label>
                           <input type="text" id="middleName" name="middleName" value={middleName} onChange={middleNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="lastName">Last Name: </label>
                           <input type="text" id="lastName" name="lastName" value={lastName} onChange={lastNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="dob">Date of Birth: </label>
                           <input type="text" id="dob" name="dob" value={dob} onChange={dobNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="heightInInches">Height in Inches: </label>
                           <input type="text" id="heightInInches" name="heightInInches" value={heightInInches} onChange={heightOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <button type="submit">Add Agent</button>
                           <button type="button" onClick={cancelClickHandler}>Cancel</button>
                       </div>
@@ -187,31 +189,32 @@ function FieldAgents(){
               <div>
                   <h3>Edit Agent</h3>
                   <form onSubmit={editAgentFormSubmitHandler}>
-                      <div>
+                      <div className="field">
                           <label htmlFor="firstName">First Name: </label>
                           <input type="text" id="firstName" name="firstName" value={firstName} onChange={firstNameOnChangeHandler} />
                       </div>
-                      <div>
+
+                      <div className="field">
                           <label htmlFor="middleName">Middle Name: </label>
                           <input type="text" id="middleName" name="middleName" value={middleName} onChange={middleNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="lastName">Last Name: </label>
                           <input type="text" id="lastName" name="lastName" value={lastName} onChange={lastNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="dob">Date of Birth: </label>
                           <input type="text" id="dob" name="dob" value={dob} onChange={dobNameOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <label htmlFor="heightInInches">Height in Inches: </label>
                           <input type="text" id="heightInInches" name="heightInInches" value={heightInInches} onChange={heightOnChangeHandler} />
                       </div>
 
-                      <div>
+                      <div className="field">
                           <button type="submit">Update Agent</button>
                           <button type="button" onClick={cancelClickHandler}>Cancel</button>
                       </div>
@@ -221,7 +224,7 @@ function FieldAgents(){
 
           {currentView === 'List' ? (
               <div>
-                  <h2>Agents</h2>
+                  <h2 className="center-headline">Agents</h2>
                   <button onClick={addAgentClickHandler}>Add Agent</button>
                   {agents.map(agent => (
 
@@ -244,7 +247,7 @@ function FieldAgents(){
 
           { currentView === 'Delete' ? (
               <div>
-                  <h2>Delete Agent</h2>
+                  <h2 className="center-headline">Delete Agent</h2>
                   <div className="cards">
                       <div>
                           <h3>{deleteAgent.firstName} {deleteAgent.middleName} {deleteAgent.lastName}</h3>
@@ -259,7 +262,19 @@ function FieldAgents(){
                   <button type="button" onClick={cancelClickHandler}>Cancel</button>
               </div>
           ) : null }
+          </main>
 
+          <footer>
+
+              <section>
+
+                  <h2>Legal Notices</h2>
+
+                  <p>Copyright &copy; 2021 Field Agent Inc. All rights reserved | <a href="#">Privacy Policy</a></p>
+
+              </section>
+
+          </footer>
       </div>
     );
 };
