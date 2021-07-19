@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import data from "../data";
+import logo from "../images/field-agent-logo.png"
 
 function FieldAgents(){
     const [agents, setAgents] = useState(data);
@@ -128,7 +129,7 @@ function FieldAgents(){
           <header>
               <div className="header-left">
                   <h1>Field Agent</h1>
-                  <a href="#"><img src="../images/field-agent-logo.png" alt="field agent logo"/></a>
+                  <a href="#"><img src={logo} alt="field agent logo"/></a>
               </div>
 
               <div className="header-right">
