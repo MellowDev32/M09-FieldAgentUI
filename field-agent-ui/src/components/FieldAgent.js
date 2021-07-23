@@ -125,11 +125,16 @@ function FieldAgents(){
     }
 
     return (
-      <div>
+      <div class="container">
           <header>
               <div className="header-left">
                   <h1>Field Agent</h1>
                   <a href="#"><img src={logo} alt="field agent logo"/></a>
+              </div>
+
+              <div className="header-middle">
+                  <h2>Field Agent</h2>
+                  <p>A Super Secret List of Super Secret Spies</p>
               </div>
 
               <div className="header-right">
@@ -226,7 +231,6 @@ function FieldAgents(){
           {currentView === 'List' ? (
               <div>
                   <h2 className="center-headline">Agents</h2>
-                  <button onClick={addAgentClickHandler}>Add Agent</button>
                   {agents.map(agent => (
 
                       <div className="cards">
@@ -247,7 +251,7 @@ function FieldAgents(){
           ) : null}
 
           { currentView === 'Delete' ? (
-              <div>
+              <div className="delete-section">
                   <h2 className="center-headline">Delete Agent</h2>
                   <div className="cards">
                       <div>
@@ -264,6 +268,33 @@ function FieldAgents(){
               </div>
           ) : null }
           </main>
+
+          <aside>
+              { currentView === 'List' ? (
+                  <button onClick={addAgentClickHandler}>Add Agent</button>
+              ) : null }
+
+              { currentView === 'Add' ? (
+                  <div>
+                      <h3>Required:</h3>
+                      <p>All fields are required to complete this form</p>
+                  </div>
+              ) : null }
+
+              { currentView === 'Edit' ? (
+                  <div>
+                      <h3>Required:</h3>
+                      <p>All fields are required to complete this form</p>
+                  </div>
+              ) : null }
+
+              { currentView === 'Delete' ? (
+                  <div>
+                      <h3>Caution:</h3>
+                      <p>A deleted Agent cannot be retrieved after deletion and will require a new form to be filled to add the agent back</p>
+                  </div>
+              ) : null }
+          </aside>
 
           <footer>
 
