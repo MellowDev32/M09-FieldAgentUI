@@ -44,7 +44,7 @@ function Agents() {
                 if (response.status === 204) {
                     getAgents(auth.user.token);
                 } else if (response.status === 404) {
-                    Promise.reject(`ToDo ID ${agentId} not found`);
+                    Promise.reject(`Agent ID ${agentId} not found`);
                 } else {
                     Promise.reject('Something unexpected went wrong :)');
                 }
