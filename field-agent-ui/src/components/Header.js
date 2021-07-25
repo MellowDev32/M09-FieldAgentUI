@@ -1,4 +1,5 @@
 import logo from '../images/field-agent-logo.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -7,7 +8,7 @@ function Header() {
 
                 <div className="header-left">
                     <h1>Field Agent</h1>
-                    <a href="home.html"><img src={logo} alt="field agent logo" /></a>
+                    <img src={logo} alt="field agent logo" />
                 </div>
 
                 <div className="header-middle">
@@ -17,8 +18,8 @@ function Header() {
 
                 <div className="header-right">
                     <ul>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Register</a></li>
+                        <Link to={`/login`} className="btn">Login</Link>
+                        <Link to={`/register`} className="btn">Register</Link>
                     </ul>
                 </div>
 
@@ -26,7 +27,7 @@ function Header() {
 
             <nav>
                 <ul>
-                    <li><a href="agents.html">Agents</a></li>
+                    <Link to={`/agents`} className="btn">Agents</Link>
                 </ul>
             </nav>
         </div>
