@@ -67,9 +67,9 @@ function Agents() {
                             <Link to={`/agents/edit/${agent.agentId}`} className="btn btn-primary btn-sm">
                                 <i className="bi bi-pencil"></i> Edit
                             </Link>
-                            <button className="btn btn-danger btn-sm ml-2"
-                                    onClick={() => agentDeleteClickHandler(agent.agentId)}>
-                                <i className="bi bi-trash"></i> Delete</button>
+                            <Link to={`/agents/delete/${agent.agentId}`} className="btn btn-danger btn-sm">
+                                <i className="bi bi-trash"></i> Delete
+                            </Link>
                         </div>
                     </div>
                 ))}
