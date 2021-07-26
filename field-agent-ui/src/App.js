@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import jwt_decode from 'jwt-decode';
 
 import React from 'react';
-import FieldAgents from "./components/FieldAgent";
 import AuthContext from './AuthContext';
 import Home from "./components/Home";
 import AddAgent from "./components/AddAgent";
@@ -14,6 +13,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Agents from "./components/Agents";
 import Header from "./components/Header";
+import {Container} from "react-bootstrap";
+import Footer from "./components/Footer";
 
 const TOKEN_KEY = 'user-api-token';
 
@@ -85,49 +86,49 @@ function App() {
 
                 <Header />
 
-                <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route exact path="/agent">
-                        {/*{user ? (*/}
-                            <Agents />
-                        {/*) : (*/}
-                        {/*    <Redirect to="/login" />*/}
-                        {/*)}*/}
-                    </Route>
-                    <Route path="/agent/add">
-                        {/*{user ? (*/}
-                            <AddAgent />
-                        {/*) : (*/}
-                        {/*    <Redirect to="/login" />*/}
-                        {/*)}*/}
-                    </Route>
-                    <Route path="/agent/edit/:id">
-                        {/*{user ? (*/}
-                            <EditAgent />
-                        {/*) : (*/}
-                        {/*    <Redirect to="/login" />*/}
-                        {/*)}*/}
-                    </Route>
-                    <Route path="/agent/delete/:id">
-                        {/*{user ? (*/}
-                            <DeleteAgent />
-                        {/*) : (*/}
-                        {/*    <Redirect to="/login" />*/}
-                        {/*)}*/}
-                    </Route>
-                    <Route path="/login">
-                        <Login />
-                    </Route>
-                    <Route path="/register">
-                        <Register />
-                    </Route>
-                    <Route path="*">
-                        <NotFound />
-                    </Route>
-                </Switch>
-
+                    <Switch>
+                        <Route exact path="/">
+                            <Home />
+                        </Route>
+                        <Route exact path="/agent">
+                            {user ? (
+                                <Agents />
+                            ) : (
+                                <Redirect to="/login" />
+                            )}
+                        </Route>
+                        <Route path="/agent/add">
+                            {user ? (
+                                <AddAgent />
+                            ) : (
+                                <Redirect to="/login" />
+                            )}
+                        </Route>
+                        <Route path="/agent/edit/:id">
+                            {user ? (
+                                <EditAgent />
+                            ) : (
+                                <Redirect to="/login" />
+                            )}
+                        </Route>
+                        <Route path="/agent/delete/:id">
+                            {user ? (
+                                <DeleteAgent />
+                            ) : (
+                                <Redirect to="/login" />
+                            )}
+                        </Route>
+                        <Route path="/login">
+                            <Login />
+                        </Route>
+                        <Route path="/register">
+                            <Register />
+                        </Route>
+                        <Route path="*">
+                            <NotFound />
+                        </Route>
+                    </Switch>
+                <Footer />
             </Router>
 
         </AuthContext.Provider>

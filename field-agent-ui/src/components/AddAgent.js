@@ -77,7 +77,7 @@ function AddAgent() {
     };
 
     return (
-        <>
+        <div className="container">
             <h2 className="my-4">Add Agent</h2>
             <Errors errors={errors} />
             <form onSubmit={addAgentFormSubmitHandler}>
@@ -109,12 +109,12 @@ function AddAgent() {
                 <div className="mt-5">
                     <button className="btn btn-success" type="submit">
                         <i className="bi bi-plus-circle-fill"></i> Add Agent</button>
-                    <Link to="/agents" className="btn btn-warning ml-2">
+                    <Link to="/agent" className="btn btn-warning ml-2">
                         <i className="bi bi-x"></i> Cancel
                     </Link>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

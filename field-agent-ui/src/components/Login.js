@@ -67,7 +67,7 @@ function Login() {
             .catch(error => console.log(error));
     };
     return (
-        <>
+        <div className="container">
             <h2 className="my-4">Login</h2>
             <Errors errors={errors} />
             <form onSubmit={formSubmitHandler}>
@@ -89,7 +89,7 @@ function Login() {
                     </Link>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

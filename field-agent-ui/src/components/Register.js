@@ -108,7 +108,7 @@ function Register() {
     };
 
     return (
-        <>
+        <div className="container">
             <h2 className="my-4">Register</h2>
             <Errors errors={errors} />
             <form onSubmit={formSubmitHandler}>
@@ -135,7 +135,7 @@ function Register() {
                     </Link>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

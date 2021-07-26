@@ -97,7 +97,7 @@ function DeleteAgent() {
     };
 
     return (
-        <div className="delete-section">
+        <div className="container">
             <h2 className="center-headline">Delete Agent</h2>
             <div className="cards">
                 <div>
@@ -109,7 +109,7 @@ function DeleteAgent() {
                 </div>
             </div>
             <p>Are you sure you want to delete this agent?</p>
-            <button onClick={() => agentDeleteClickHandler(id)}>Delete</button>
+            <button className="btn btn-primary" onClick={() => agentDeleteClickHandler(id)}>Delete</button>
             <Link to="/agent" className="btn btn-warning ml-2">
                 <i className="bi bi-x"></i> Cancel
             </Link>

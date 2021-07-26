@@ -109,7 +109,7 @@ function EditAgent() {
     };
 
     return (
-        <>
+        <div className="container">
             <h2 className="my-4">Edit Agent</h2>
             <Errors errors={errors} />
             <form onSubmit={editAgentFormSubmitHandler}>
@@ -146,7 +146,7 @@ function EditAgent() {
                     </Link>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

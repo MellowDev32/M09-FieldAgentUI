@@ -1,7 +1,7 @@
 
 function Home() {
     return (
-        <div>
+        <div class="container">
             <main>
 
                 <section>
@@ -25,35 +25,6 @@ function Home() {
                 </section>
 
             </main>
-
-            <aside>
-                <h3 className="center-headline">Featured Agents</h3>
-                <div>
-                    <h4>Hazel C. Sauven</h4>
-                    <ul>
-                        <li><span>DOB:</span> 1954-09-16</li>
-                        <li><span>Height in Inches:</span> 76</li>
-                    </ul>
-                    <div>
-                    </div>
-                </div>
-
-                <div>
-                    <h4>Claudian C. O'Lynn</h4>
-                    <ul>
-                        <li><span>DOB:</span> 1956-11-09</li>
-                        <li><span>Height in Inches:</span> 41</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Winn V. Puckrin</h4>
-                    <ul>
-                        <li><span>DOB:</span> 1999-10-21</li>
-                        <li><span>Height in Inches:</span> 60</li>
-                    </ul>
-                </div>
-            </aside>
         </div>
     );
 }

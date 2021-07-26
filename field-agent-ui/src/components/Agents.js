@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthContext';
+import {Container} from "react-bootstrap";
 
 function Agents() {
     const [agents, setAgents] = useState([]);
@@ -33,28 +34,38 @@ function Agents() {
 
 
     return (
-        <div>
-            <h2>Agents</h2>
-            <div class="cards">
-                {agents.map(agent => (
-                    <div key={agent.agentId}>
-                        <h3>{agent.firstName} {agent.middleName} {agent.lastName}</h3>
-                        <ul>
-                            <li><span>DOB: </span>{agent.dob}</li>
-                            <li><span>Height in Inches: </span>{agent.heightInInches}</li>
-                        </ul>
-                        <div>
-                            <Link to={`/agent/edit/${agent.agentId}`} className="btn btn-primary btn-sm">
-                                <i className="bi bi-pencil"></i> Edit
-                            </Link>
-                            <Link to={`/agent/delete/${agent.agentId}`} className="btn btn-danger btn-sm">
-                                <i className="bi bi-trash"></i> Delete
-                            </Link>
+        <div class="container">
+            <main>
+                <h2>Agents</h2>
+
+                <Link to={`/agent/add`} className="btn btn-success btn-sm">
+                    <i className="bi bi-plus"></i> Add Agent
+                </Link>
+
+                <div className="cards">
+                    {agents.map(agent => (
+                        <div className="row">
+                            <div className="col card" key={agent.agentId}>
+                                <h3>{agent.firstName} {agent.middleName} {agent.lastName}</h3>
+                                <ul>
+                                    <li><span>DOB: </span>{agent.dob}</li>
+                                    <li><span>Height in Inches: </span>{agent.heightInInches}</li>
+                                </ul>
+                                <div>
+                                    <Link to={`/agent/edit/${agent.agentId}`} className="btn btn-primary btn-sm">
+                                        <i className="bi bi-pencil"></i> Edit
+                                    </Link>
+                                    <Link to={`/agent/delete/${agent.agentId}`} className="btn btn-danger btn-sm">
+                                        <i className="bi bi-trash"></i> Delete
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </main>
         </div>
+
     );
 }
 
