@@ -10,7 +10,7 @@ function DeleteAgent() {
     const [heightInInches, setHeightInInches] = useState('');
     const auth = useContext(AuthContext);
     const [agents, setAgents] = useState([]);
-    const [toDelete, setToDelete] = useState();
+    const [errors, setErrors] = useState([]);
     const { id } = useParams();
     const history = useHistory();
 
@@ -82,6 +82,15 @@ function DeleteAgent() {
                     Promise.reject(`Agent ID ${agentId} not found`);
                 } else {
                     Promise.reject('Something unexpected went wrong :)');
+                }
+            })
+            .then(data => {
+                if (!data) {
+                    // redirect the user back to the /todos route
+                    history.push('/agent');
+                } else {
+                    // we have errors to display
+                    setErrors(data);
                 }
             })
             .catch(error => console.log(error));
