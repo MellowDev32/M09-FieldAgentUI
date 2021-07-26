@@ -1,0 +1,41 @@
+header h1 {
+    display: none;
+}
+
+.header-left {
+    display: flex;
+    float: left;
+}
+
+.header-middle {
+    text-align: center;
+}
+
+.header-right {
+    display: flex;
+    float: right;
+}
+
+header {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 5px solid #CF1717;
+}
+
+main {
+    display: block;
+    margin-top: 50px;
+}
+
+.header-border {
+    border-bottom: 5px solid #CF1717;
+}
+
+.footer-border {
+    border-top: 5px solid #083B66;
+    border-bottom: 5px solid #CF1717;
+}
+
+footer {
+    text-align: center;
+}
