@@ -1,0 +1,284 @@
+
+
+/* Mobile */
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+}
+
+header {
+    text-align: center;
+    padding-top: 40px;
+    grid-area: header;
+    border: 5px solid #CF1717;
+}
+
+header h1 {
+    display: none;
+}
+
+header li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover {
+    color: #CF1717;
+}
+
+header a:active {
+    color: #083B66;
+}
+
+nav {
+    text-align: center;
+    grid-area: nav;
+    border: 5px solid #083B66;
+    list-style-type: none;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    line-height: 5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+nav li a:hover {
+    background-color: #083B66;
+    color: white;
+}
+
+main {
+    padding: 15px;
+    grid-area: main;
+    border: 5px solid #CF1717;
+}
+
+aside {
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+    grid-area: aside;
+    border: 5px solid #083B66;
+}
+
+aside h3{
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding-top: 20px;
+    grid-area: footer;
+    border: 5px solid #CF1717;
+}
+
+
+/* Desktop */
+
+@media only screen and (min-width: 1050px) {
+    .container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr auto;
+        grid-auto-columns: 1fr minmax(400px, 3fr) 1fr;
+        grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+    }
+
+    .header-left {
+        display: inline;
+        float: left;
+    }
+
+    .header-middle {
+        line-height: 2rem;
+    }
+
+    .header-middle h2 {
+        font-size: 4rem;
+        margin-top: 40px;
+    }
+
+    .header-right {
+        float: right;
+        display: flex;
+        text-align: left;
+    }
+
+    .header-right li {
+        display: inline;
+        padding: 10px;
+        line-height: 5rem;
+        text-decoration: none;
+    }
+
+    .header-right a {
+        display: inline;
+        padding: 10px;
+        line-height: 5rem;
+        text-decoration: none;
+    }
+
+    .header-right a {
+        text-decoration: none;
+        color: black;
+    }
+
+    main {
+        padding: 20px;
+        border-top: 5px solid #083B66;
+        border-bottom: 5px solid #083B66;
+        border-left: 5px solid #CF1717;
+        border-right: 5px solid #CF1717;
+    }
+}
+
+/* Specialized Classes */
+
+/* card styles */
+
+.cards {
+    text-align: center;
+    margin-top: 5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.cards>div {
+    border: 1px solid black;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+/* form styles */
+
+.field {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.field>label {
+    margin-right: 10px;
+}
+
+.field>input {
+    border: solid 1px black;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    flex: 1 0 auto;
+}
+
+input:focus,
+textarea:focus {
+    background: black;
+    border-radius: 5px;
+}
+
+form button {
+    margin: 1rem 0.5rem;
+}
+
+
+/* button formatting */
+
+button {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    background-color: #999;
+    padding: 0.5em 2rem;
+    border: none;
+    font-family: 'Special Elite', cursive;
+}
+
+button:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.add-agent-btn {
+    float: left;
+    margin-left: 20px;
+}
+
+.delete-agent-btn {
+    float: left;
+    margin-left: 20px;
+    margin-top: 14px;
+}
+
+.update-agent-btn {
+    float: left;
+    margin-left: 20px;
+}
+
+.cancel-btn {
+    float: right;
+    margin: 14px 20px 0px 0px;
+    background-color: #CF1717;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 0.5em 2rem;
+    border: none;
+    text-decoration: none;
+    color: white !important;
+}
+
+.cancel-btn:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.add-btn {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+    background-color: #999;
+    padding: 0.5em 2rem;
+    border: none;
+    margin: 20px 20px 0 0;
+    text-decoration: none;
+}
+
+.add-btn:hover {
+    background-color: #083B66;
+    color: white;
+    text-shadow: 2px black;
+}
+
+.icon {
+    background-color: green;
+    width: 2em;
+}
+
+.delete-section {
+    text-align: center;
+}

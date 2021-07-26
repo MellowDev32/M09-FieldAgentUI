@@ -1,0 +1,61 @@
+/*
+
+red: #CF1717
+blue: #083B66
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Special Elite', cursive;
+    font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin: 1rem 0;
+    /* top/bottom left/right */
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    line-height: 1.4;
+    margin: 1.3rem 0;
+}
+
+em {
+    font-style: italic;
+}
+
+small {
+    font-size: 0.8rem;
+}
