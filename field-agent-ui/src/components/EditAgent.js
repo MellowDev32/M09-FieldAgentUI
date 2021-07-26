@@ -46,7 +46,7 @@ function EditAgent() {
             }
         }
 
-        fetch(`http://localhost:8080/api/agents/${id}`, init)
+        fetch(`http://localhost:8080/api/agent/${id}`, init)
             // Response object
             .then(response => {
                 if (response.status === 404) {
@@ -87,7 +87,7 @@ function EditAgent() {
             body: JSON.stringify(updatedAgent)
         };
 
-        fetch(`http://localhost:8080/api/agents/${updatedAgent.agentId}`, init)
+        fetch(`http://localhost:8080/api/agent/${updatedAgent.agentId}`, init)
             .then(response => {
                 if (response.status === 204) {
                     return null;
@@ -99,7 +99,7 @@ function EditAgent() {
             .then(data => {
                 if (!data) {
                     // redirect the user back to the /todos route
-                    history.push('/agents');
+                    history.push('/agent');
                 } else {
                     // we have errors to display
                     setErrors(data);
@@ -141,7 +141,7 @@ function EditAgent() {
                 <div className="mt-5">
                     <button className="btn btn-success" type="submit">
                         <i className="bi bi-save"></i> Update Agent</button>
-                    <Link to="/agents" className="btn btn-warning ml-2">
+                    <Link to="/agent" className="btn btn-warning ml-2">
                         <i className="bi bi-x"></i> Cancel
                     </Link>
                 </div>

@@ -20,7 +20,7 @@ function Agents() {
         }
 
         // loading initial data for our component
-        fetch('http://localhost:8080/api/agents', init)
+        fetch('http://localhost:8080/api/agent', init)
             .then(response => response.json())
             .then(data => setAgents(data))
             .catch(error => console.log(error));
@@ -44,10 +44,10 @@ function Agents() {
                             <li><span>Height in Inches: </span>{agent.heightInInches}</li>
                         </ul>
                         <div>
-                            <Link to={`/agents/edit/${agent.agentId}`} className="btn btn-primary btn-sm">
+                            <Link to={`/agent/edit/${agent.agentId}`} className="btn btn-primary btn-sm">
                                 <i className="bi bi-pencil"></i> Edit
                             </Link>
-                            <Link to={`/agents/delete/${agent.agentId}`} className="btn btn-danger btn-sm">
+                            <Link to={`/agent/delete/${agent.agentId}`} className="btn btn-danger btn-sm">
                                 <i className="bi bi-trash"></i> Delete
                             </Link>
                         </div>

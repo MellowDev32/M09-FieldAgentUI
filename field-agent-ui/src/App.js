@@ -89,28 +89,28 @@ function App() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route exact path="/agents">
+                    <Route exact path="/agent">
                         {/*{user ? (*/}
                             <Agents />
                         {/*) : (*/}
                         {/*    <Redirect to="/login" />*/}
                         {/*)}*/}
                     </Route>
-                    <Route path="/agents/add">
+                    <Route path="/agent/add">
                         {/*{user ? (*/}
                             <AddAgent />
                         {/*) : (*/}
                         {/*    <Redirect to="/login" />*/}
                         {/*)}*/}
                     </Route>
-                    <Route path="/agents/edit/:id">
+                    <Route path="/agent/edit/:id">
                         {/*{user ? (*/}
                             <EditAgent />
                         {/*) : (*/}
                         {/*    <Redirect to="/login" />*/}
                         {/*)}*/}
                     </Route>
-                    <Route path="/agents/delete/:id">
+                    <Route path="/agent/delete/:id">
                         {/*{user ? (*/}
                             <DeleteAgent />
                         {/*) : (*/}

@@ -27,7 +27,7 @@ function Header() {
 
             <nav>
                 <ul>
-                    <Link to={`/agents`} className="btn">Agents</Link>
+                    <Link to={`/agent`} className="btn">Agents</Link>
                 </ul>
             </nav>
         </div>

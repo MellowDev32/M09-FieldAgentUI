@@ -56,7 +56,7 @@ function AddAgent() {
             body: JSON.stringify(newAgent)
         };
 
-        fetch('http://localhost:8080/api/agents', init)
+        fetch('http://localhost:8080/api/agent', init)
             .then(response => {
                 if (response.status === 201 || response.status === 400) {
                     return response.json();
@@ -67,7 +67,7 @@ function AddAgent() {
                 // we either created the recorded...
                 if (data.agentId) {
                     // redirect the user back to the /todos route
-                    history.push('/agents');
+                    history.push('/agent');
                 } else {
                     // we have error messages
                     setErrors(data);
